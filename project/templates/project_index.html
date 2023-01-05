@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<div class="container-fluid flex-row py-5">
+    <div class="row">
+        {% for Project in project %}
+            <div class="col-md-4 py-5">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="{% static Project.image %}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ Project.judul }}</h5>
+                        <p class="card-text">{{ Project.deskripsi }}</p>
+                        <a href="{% url 'detail_project' Project.pk %}"
+                        class="btn btn-primary">
+                            Baca selengkapnya
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+    
+{% endblock %}

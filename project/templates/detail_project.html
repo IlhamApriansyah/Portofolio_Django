@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<div class="container-fluid flex-row py-3">
+    <h1>{{ Project.judul }}</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static Project.image %}" alt="" width="100%">
+        </div>
+        <div class="col-md-4">
+            <h5>Tentang project :</h5>
+            <p>{{ Project.deskripsi }}</p>
+            <br>
+            <h5>Teknologi yang digunakan :</h5>
+            <p>{{ Project.teknologi }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
